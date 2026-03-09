@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Material / Energy",
+        "is_emission": "true / false",
+        "renewable_share": "0.4",
+        "is_internal_energy": "true / false",
+        "production_facility": "name",
+        "production_line": "name",
+        "production_process": "name",
+        "amount": "amount",
+        "unit": "unit"
+    },
+    {
+        "name": "Holz",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Tisch",
+        "production_process": "Beine montieren",
+        "amount": "10",
+        "unit": "qm"
+    },
+    {
+        "name": "Nägel",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Tisch",
+        "production_process": "Beine montieren",
+        "amount": "40",
+        "unit": "Anzahl"
+    },
+    {
+        "name": "Strom Vattenfall",
+        "is_emission": null,
+        "renewable_share": "0.4",
+        "is_internal_energy": "false",
+        "production_facility": "Gebäude A",
+        "production_line": "Tisch",
+        "production_process": "Beine montieren",
+        "amount": "50",
+        "unit": "kWh"
+    },
+    {
+        "name": "Holz",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Beine montieren",
+        "amount": "10",
+        "unit": "qm"
+    },
+    {
+        "name": "Schrauben",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Beine montieren",
+        "amount": "40",
+        "unit": "Anzahl"
+    },
+    {
+        "name": "Strom Vattenfall",
+        "is_emission": null,
+        "renewable_share": "0.4",
+        "is_internal_energy": "false",
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Beine montieren",
+        "amount": "50",
+        "unit": "kWh"
+    },
+    {
+        "name": "Holz",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Lehne montieren",
+        "amount": "10",
+        "unit": "qm"
+    },
+    {
+        "name": "Schrauben",
+        "is_emission": "false",
+        "renewable_share": null,
+        "is_internal_energy": null,
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Lehne montieren",
+        "amount": "40",
+        "unit": "Anzahl"
+    },
+    {
+        "name": "Strom Vattenfall",
+        "is_emission": null,
+        "renewable_share": "0.4",
+        "is_internal_energy": "false",
+        "production_facility": "Gebäude A",
+        "production_line": "Stuhl",
+        "production_process": "Lehne montieren",
+        "amount": "50",
+        "unit": "kWh"
+    }
+]

@@ -4,18 +4,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/Home">Industry Symbiosis 5.0</a>
+        <a class="navbar-brand" href="/Home">Industry Symbisis 5.0</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
       </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
       </div>
     </nav>
@@ -23,32 +18,28 @@
       <div class="background">
           <div class="container-fluid px-1 py-5 mx-auto">
             <div class="row d-flex justify-content-center">
-              <div class="col-xl-7 col-lg-8 col-md-9 col-11">
-                <div class="Welcome-Text text-center">
-                  <h3 class="topic">Login</h3>
-                  <p class="welcome-text">Bitte melden Sie sich mit<br> Ihrem Anmeldenamen und Passwort an.</p>
-
-                </div>
+              <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3 class="topic">Login</h3>
+                <p class="welcome-text">Bitte melden Sie sich mit<br> Ihrem Anmeldenamen und Passwort an.</p>
                 <div class="card">
-                <h5 class="mb-4 UserLogin-Text">User Login</h5>
+                <h5 class="text-center mb-4">Admin Login</h5>
                   <form class="form-card" onsubmit="event.preventDefault()">
                     <div class="row text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> 
                           <label class="form-control-label px-3">Anmeldename<span class="text-danger"> *</span></label> 
-                          <input v-model="Username" type="text" id="fname" name="fname" placeholder="Anmeldename: Email"> 
+                          <input type="text" id="fname" name="fname" placeholder="Anmeldename" onblur="validate(1)"> 
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Passwort<span class="text-danger"> *</span></label> 
-                          <input type="password" id="lpass" name="lpass" placeholder="Passwort"> 
+                          <input type="password" id="lpass" name="lpass" placeholder="Passwort" onblur="validate(2)"> 
                         </div>
                     </div>
                     
                         <div class="form-group col-sm-12 text-center flex-column d-flex">
-                          <!-- API for matching userID with enterpriseId missing -->
-                          <button @click="checkUser(1)" class="AnmeldeButton">Anmelden</button>
+                          <button @click="$router.push('/Admin')" class="AnmeldeButton">Anmelden</button>
                         </div>
               
-                    <div class="row">
-                      <div class="col-sm-6 flex-column text-leftr">
+                    <div class="row justify-content-between">
+                      <div class="form-group col-sm-6 flex-column text-left">
                         <span class="text-danger"> * </span><span>Pflichtfeld</span>
                       </div>
                     </div>
@@ -64,58 +55,11 @@
 </template>
 
 <script>
-
-import axios from 'axios';
-import router from '../router';
-
 export default {
   name: 'LoginPage',
   props: {
     msg: String
   },
-
-  data() {
-    return {
-      Users: [],
-      Username: '',
-
-    }
-  },
-
-methods: {
-  async checkUser(id) {
-    let url = new URL('https://enterprisemanagementservice2.azurewebsites.net/api/users/get/enterprise/' + id);
-
-        try {
-        const res = await axios.get(url);
-        // this.url = url;
-        this.Users = res.data;
-        }
-        catch(e) {
-          console.error(e);
-        }
-        var ArLength = this.Users.length;
-     
-
-        for (let i = 0; i <= ArLength - 1; i++) {
-          
-          if (this.Users[i].email === this.Username) {
-            router.push({path: `/Dashboard${'/' + id}/${this.Username}`} );
-            break;
-          } else if (i === ArLength - 1 && this.Users[ArLength - 1].email !== this.Username) {
-            alert('Benutzername oder Passwort inkorrekt')
-          }
-
-        }
-
-
-
-  }
-
-      
-}
-
-
 }
 </script>
 
@@ -123,11 +67,6 @@ methods: {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-.UserLogin-Text {
-  color: rgb(0, 50, 14);
-}
-
 .background {
   background-image: url('~@/assets/Background1.jpeg');
   background-repeat: no-repeat;
@@ -200,7 +139,7 @@ box-shadow: none !important;
 outline-width: 0
 }
 .nav-link {
-  color: grey;
+  color: #000;
 }
 </style>
 
